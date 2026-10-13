@@ -1,0 +1,16 @@
+{
+  "name": "neopian-archives",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Readable Neopets lookup sources and compact submission builds",
+  "type": "module",
+  "engines": { "node": ">=22.8" },
+  "scripts": {
+    "build:lookup": "node scripts/build-lookup.mjs",
+    "test": "node --test --experimental-test-isolation=none"
+  },
+  "devDependencies": {
+    "clean-css": "5.3.3",
+    "html-minifier-terser": "7.2.0"
+  }
+}
