@@ -91,4 +91,3 @@ test('missing source, unsafe names, empty output, and malformed CSS fail clearly
   await assert.rejects(compactLookup('<p>text</p>', '.archive{color:green} invalid'), /CSS needs review/);
   await assert.rejects(compactLookup('<p>text</p>', '</style><p>injection</p>'), /closing style tag/);
 });
-
