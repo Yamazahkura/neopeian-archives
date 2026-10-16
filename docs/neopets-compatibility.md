@@ -93,3 +93,30 @@ Local Chromium checks are browser evidence only. See
 [the exact changes and artwork measurements](amita-v02.2-scrolling-dossier.md)
 for source/build paths, counts, local evidence, and proposed live checks.
 V02.2 is now the latest user-confirmed working version; V02.1 stays unchanged.
+
+## Amita V02.3 / Universal Template V1.0 background experiment — 2026-10-16
+
+The initial drafts were derived from confirmed V02.2. They added
+`background-image:url(https://i.imgur.com/DhlJ1Pi.png)`, `background-size:cover`,
+`background-position:center top`, and `background-repeat:no-repeat` to `.sd`.
+Tori subsequently reported the exact Amita V02.3 filter error: "Invalid words
+or disallowed property names found in your style tags." The rejected property
+was `background-size`. Record **confirmed rejected** for `background-size` in
+this Neopets pet lookup CSS context.
+
+The targeted Amita fix removes only `background-size:cover`. It retains
+`background-image`, `background-position:center top`, and `background-repeat:no-repeat`
+as **unverified** for another live test. Without sizing CSS the image uses its
+natural dimensions, with possible clipping; image dimensions remain unverified.
+No other Amita HTML or CSS changes are included. At Tori's follow-up request,
+Universal V1.0 also removes only `background-size:cover` and is rebuilt. Both
+corrected drafts retain the same placement CSS and await live Neopets testing.
+The existing `overflow:auto` reading window is retained; its prior confirmation
+applies to V02.2, not automatic whole-file compatibility of the new drafts.
+
+Local Chromium parsed the placement declarations and preserved the 320px reading
+area and stationary header. External requests were blocked in that local check;
+image loading, intrinsic dimensions, actual crop, and appearance were not verified.
+`tabindex`, `box-sizing`, and the other previously rejected features remain absent.
+See [the draft report](universal-lookup-v1.md) for counts, tests, source/build paths,
+placeholder provenance, provisional credit, and proposed live checks.
