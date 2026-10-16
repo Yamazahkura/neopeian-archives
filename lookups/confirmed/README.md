@@ -1,6 +1,11 @@
 # Immutable confirmed references
 
-Tori's confirmed **Amita V02.1** compact file is preserved byte-for-byte at
+The newest confirmed baseline is **Amita V02.2**:
+`amita/v02.2/v02.2.compact.html` (3,667 characters), copied byte-for-byte from
+the exact corrected build identified by Tori's live confirmation. Its
+`metadata.json` records the originating commit, SHA-256, and reported behavior.
+
+Tori's prior confirmed **Amita V02.1** compact file is preserved byte-for-byte at
 `amita/v02.1/Amita_Lookup_Test_v02.1_vertical_compact.html` (3,468 characters).
 Its separate `metadata.json` records SHA-256, provenance, approval scope, and
 reported Neopets test context. See [the comparison report](../../docs/amita-v02.1-baseline.md).

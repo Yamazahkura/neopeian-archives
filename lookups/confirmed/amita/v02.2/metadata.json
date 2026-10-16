@@ -1,0 +1,33 @@
+{
+  "filename": "v02.2.compact.html",
+  "version": "v02.2",
+  "pet": "amita",
+  "sha256": "977f448de9fd1ee8459114d2194482de4a22be43b5bc953f2613c6d938e20a1e",
+  "codePoints": 3667,
+  "utf16Units": 3667,
+  "utf8Bytes": 3667,
+  "importDate": "2026-10-16",
+  "confirmationReportedDate": "2026-10-16",
+  "exactLiveTestDate": null,
+  "sourceBuild": "lookups/builds/amita/v02.2.compact.html",
+  "sourceCommit": "b5588c3660a20cb7cf9d0e070b50a1ef541a42fc",
+  "provenance": "Exact corrected build linked in the preceding reply, removing tabindex; identified by Tori in this chat as the version that passed live Neopets testing. Copied byte-for-byte from that committed build, not regenerated or reconstructed from screenshots. No separate post-save HTML export was supplied.",
+  "approval": "Tori explicitly requested preservation as the newest immutable confirmed working baseline. No merge or publication authorized.",
+  "neopetsTestContext": {
+    "reporter": "Tori",
+    "context": "Neopets pet lookup; exact editor URL, browser, viewport, and saved-page HTML were not supplied. No agent-performed live test.",
+    "confirmedBehaviors": [
+      "Code accepted without errors after removing tabindex",
+      "AMITA header remains stationary while dossier content scrolls",
+      "Dossier content scrolls within its 320px reading area",
+      "Scrollbar displays correctly",
+      "Parchment background, typography, and overall styling render as intended"
+    ],
+    "notExplicitlyVerified": [
+      "Individual native statistics, navigation, portrait/Petpet, trophies, and functional controls"
+    ],
+    "rejectedAttributes": {
+      "tabindex": "Tori reported Invalid/disallowed HTML attribute tabindex for the earlier V02.2 pet lookup submission."
+    }
+  }
+}
