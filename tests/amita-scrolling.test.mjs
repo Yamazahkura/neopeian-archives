@@ -34,4 +34,3 @@ test('V02.2 committed compact build and count report reproduce within the lookup
   const counts = await buildLookup('amita', 'v02.2', { check: true });
   assert.ok(counts.remaining > 0);
 });
-
