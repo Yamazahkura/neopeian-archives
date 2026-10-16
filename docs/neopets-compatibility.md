@@ -93,3 +93,19 @@ Local Chromium checks are browser evidence only. See
 [the exact changes and artwork measurements](amita-v02.2-scrolling-dossier.md)
 for source/build paths, counts, local evidence, and proposed live checks.
 V02.2 is now the latest user-confirmed working version; V02.1 stays unchanged.
+
+## Amita V02.3 / Universal Template V1.0 background experiment — 2026-10-16
+
+These are **local-only drafts**, derived from the confirmed V02.2 code. They add
+`background-image:url(https://i.imgur.com/DhlJ1Pi.png)`, `background-size:cover`,
+`background-position:center top`, and `background-repeat:no-repeat` to `.sd`.
+No Neopets filter acceptance or rejection has been observed for these additions.
+The existing `overflow:auto` reading window is retained; its prior confirmation
+applies to V02.2, not automatic whole-file compatibility of the new drafts.
+
+Local Chromium parsed the placement declarations and preserved the 320px reading
+area and stationary header. External requests were blocked in that local check;
+image loading, intrinsic dimensions, actual crop, and appearance were not verified.
+`tabindex`, `box-sizing`, and the other previously rejected features remain absent.
+See [the draft report](universal-lookup-v1.md) for counts, tests, source/build paths,
+placeholder provenance, provisional credit, and proposed live checks.

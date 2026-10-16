@@ -98,3 +98,10 @@ Pages source and live asset URLs before any approved publishing change.
 Petpages are in project scope, but this initial script specifically enforces the
 pet lookup limit. Add separate readable petpage sources and build rules when a
 petpage is provided; do not assume its editor shares lookup limits or CSS support.
+
+## Universal Lookup Template V1.0 (draft)
+
+[Draft sources, build commands, and test report](docs/universal-lookup-v1.md)
+cover Amita V02.3 and the copy-and-customize Universal V1.0 template. Edit readable
+files in `lookups/src/`; use generated `lookups/builds/` files for approved live
+testing. Both drafts await Neopets testing. V02.2 remains the confirmed baseline.
