@@ -5,13 +5,14 @@ These drafts start from the exact live-tested V02.2 build, archived at
 `977f448de9fd1ee8459114d2194482de4a22be43b5bc953f2613c6d938e20a1e`.
 The readable V02.2 source reproduces that build. Both confirmed versions and
 all V02.1/V02.2 sources/builds stay unchanged. V02.2 remains the latest confirmed
-baseline; **neither new draft has been live-tested on Neopets**.
+baseline; **Amita V02.3 was rejected for `background-size`; its corrected build awaits
+another live test. Template V1.0 has not been live-tested.**
 
 ## Sources and generated submissions
 
 | Draft | Edit this readable source | Generated complete submission | UTF-16 count | Remaining |
 | --- | --- | --- | ---: | ---: |
-| Amita V02.3 | `lookups/src/amita/v02.3.html` | `lookups/builds/amita/v02.3.compact.html` | 3,936 | 64 |
+| Amita V02.3 | `lookups/src/amita/v02.3.html` | `lookups/builds/amita/v02.3.compact.html` | 3,914 | 86 |
 | Universal V1.0 | `lookups/src/universal/v1.0.html` | `lookups/builds/universal/v1.0.compact.html` | 3,661 | 339 |
 
 Count reports are adjacent `*.counts.json` files. All current output is ASCII,
@@ -26,15 +27,19 @@ The outer `.sd` container retains its dark fallback color and receives only:
 
 ```css
 background-image:url(https://i.imgur.com/DhlJ1Pi.png);
-background-size:cover;
 background-position:center top;
 background-repeat:no-repeat;
 ```
 
 The image sits behind the dossier frame, not the body, native portrait, or stats.
-`cover` scales uniformly to fill the background area without distorting the
-aspect ratio; excess image can be cropped. `center top` anchors the top and
-centers any horizontal crop. The default background positioning area is the
+Tori reported rejection of `background-size` by the Neopets pet lookup CSS
+filter. The corrected Amita source removes that one declaration, leaving the
+image at its natural dimensions without stretching. `center top` anchors the
+top and centers any horizontal clipping. No fit-to-container scaling is requested.
+The image may not cover the container; the existing solid fallback fills any gap.
+Image, position, and repeat declarations remain unverified until the next live test.
+Template V1.0 is intentionally unchanged and retains the rejected `cover` declaration;
+its current build is not a corrected live-test candidate. The default background positioning area is the
 padding box. This is a placement test, not a promise of exact artwork alignment.
 The background stays on the non-scrolling parent as lore scrolls inside `.ab`.
 
@@ -120,11 +125,12 @@ git diff --check
 ```
 
 All **16 automated tests pass**, including immutable baseline checks and three
-new checks covering the exact allowed V02.2-to-V02.3 changes, identical shared
-CSS/element structure in the template, build freshness/count limits, visible
+new checks covering the exact allowed V02.2-to-V02.3 changes, shared
+CSS/element structure in the template except its explicitly retained sizing declaration, build freshness/count limits, visible
 credit, and absence of known rejected features.
 
-Separate local Playwright/Chromium checks used the two generated fragments,
+Before this targeted compatibility fix, local Playwright/Chromium checks used
+the two generated fragments,
 with external requests deliberately blocked. They verify browser parsing and
 layout only, **not image loading, image appearance, or live Neopets behavior**.
 Both resolve the configured image URL, `cover`, `50% 0%`, and `no-repeat` as
@@ -139,10 +145,11 @@ with V02.2's 570px total height. The reading panel stays at (21, 149) relative t
 the dossier's outer upper-left. No background artwork dimensions are inferred
 from these measurements.
 
-New `background-image`, `background-size:cover`, `background-position:center top`,
-and `background-repeat:no-repeat` declarations remain **unverified on Neopets**.
-If the filter strips sizing, the browser may render at natural image size instead;
-if it strips positioning/repeat, crop/tiling may differ. The fallback solid color
+The retained `background-image`, `background-position:center top`, and
+`background-repeat:no-repeat` declarations remain **unverified on Neopets**.
+`background-size` is **confirmed rejected** in the reported pet lookup context.
+Amita now intentionally renders at natural image size. If the filter strips
+positioning/repeat, clipping or tiling may differ. The fallback solid color
 and opaque panels protect readability when the image fails to load. Neither
 `tabindex`, `box-sizing`, nor other known rejected features are introduced.
 
