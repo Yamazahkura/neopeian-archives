@@ -5,11 +5,13 @@ artwork hosted through GitHub Pages. The Haunted Swamp Tour Office is our fictio
 setting, with Ikharuss maintaining dossiers on unusual swamp residents.
 Our first resident is **Amita**, a Mutant Cybunny with a gothic swamp archive lookup.
 
-**Amita V02.1 is the latest confirmed working lookup.** Its exact compact HTML
-is archived under `lookups/confirmed/amita/v02.1/`. The supplied readable source
-is imported unchanged as `lookups/src/amita/v02.1-import.html`. See the
-[baseline comparison](docs/amita-v02.1-baseline.md) for counts, provenance,
-non-identical build output, and proposed follow-up corrections.
+**Amita V02.2 is the latest confirmed working lookup**, based on Tori's live
+Neopets testing after removal of `tabindex`. Its exact 3,667-character corrected
+build is archived under `lookups/confirmed/amita/v02.2/` with provenance and SHA-256.
+See the [V02.2 report](docs/amita-v02.2-scrolling-dossier.md) and
+[V02.3 artwork placement specification](docs/amita-v02.3-art-placement.md).
+V02.1 remains unchanged; its import provenance is in the
+[baseline comparison](docs/amita-v02.1-baseline.md).
 
 ## Repository layout
 

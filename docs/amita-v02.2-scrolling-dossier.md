@@ -1,8 +1,11 @@
 # Amita V02.2: Scrolling Dossier Prototype
 
-Draft based on the confirmed V02.1 source on main commit
-`440d82f`. V02.1 remains the latest confirmed lookup. No background images,
-live submission, publication, merge, or hosting changes are included.
+Based on the confirmed V02.1 source on main commit `440d82f`. Tori has now
+confirmed the corrected build at `b5588c3` after live Neopets testing; V02.2 is
+the newest confirmed working baseline. The exact 3,667-byte build is preserved
+at `lookups/confirmed/amita/v02.2/v02.2.compact.html`, with SHA-256 and provenance
+in adjacent `metadata.json`. No source/build bytes were changed during archiving.
+No background images, publication, merge, or hosting changes are included.
 
 ## Files and scope
 
@@ -32,8 +35,9 @@ The existing `.sd .ab` parchment panel becomes the reading area:
 The initial draft used `height:320px;box-sizing:border-box`. Tori supplied a
 live Neopets rejection screenshot naming `box-sizing` on 2026-10-16. The revised
 draft removes that declaration and uses the default content-box calculation:
-`278 + 20 + 20 + 1 + 1 = 320px`. It requires another live test; the screenshot
-does not establish acceptance of `overflow:auto` or any other addition.
+`278 + 20 + 20 + 1 + 1 = 320px`. The later corrected whole-file build, without
+`tabindex`, has now passed Tori's live test; the initial rejection alone did not
+establish acceptance of other additions.
 
 The existing `border:1px solid #9a9b7b` supplies the subtle reading boundary.
 Existing parchment/green colors, 20px panel padding, and 12px header-to-panel gap
@@ -112,7 +116,7 @@ git diff --check
 
 The full generated ASCII submission is **3,667/4,000** code points, UTF-16 units,
 and UTF-8 bytes: **333 characters remain**. The existing builder is unchanged.
-All 12 automated tests pass, including baseline integrity, build freshness,
+All 13 automated tests pass, including baseline integrity, build freshness,
 and exact comparisons of every V02.1 CSS rule and resident element after removing
 only the documented additions.
 
@@ -125,17 +129,23 @@ overflow and an unchanged header rectangle. Adding a temporary paragraph with
 1,000 repetitions of `Fixture expansion. ` increased scroll travel to 2,721px,
 while the dossier stayed 570px tall. Synthetic text was never saved to source.
 A temporary `overflow-y:auto` override also scrolled 190px. The submitted version
-uses `overflow:auto`; neither form is claimed to pass the Neopets filter.
+uses `overflow:auto`, which Tori subsequently confirmed works in the corrected
+whole-file build. `overflow-y:auto` remains browser-only evidence.
 
 Chromium CLI `--dump-dom` attempts failed or hung in this environment; the browser
 measurements above came from the successful Playwright driver. Playwright was
 installed in a temporary directory only; no repository dependency or build change
 was required. The committed test suite does not require a browser.
 
-Tori should test the exact compact file in the live editor, recording acceptance,
-rejection, or rewriting of `overflow:auto` and `height`;
-then check wheel/trackpad scrolling, advisory reachability,
-header stability, portrait/Petpet, all native stats/navigation/trophies, and
-functional controls. If the filter rejects the prototype, record its exact message
-before trying the alternative overflow declaration in a separate working version.
-Do not silently promote this draft to a confirmed version.
+Tori subsequently reported acceptance without errors and visually confirmed
+stationary header behavior, scrolling within the 320px reading area, correct
+scrollbar display, and intended parchment, typography, and styling. The exact
+corrected build linked in the preceding chat reply is available and was archived
+byte-for-byte, without reconstructing or minifying it. No separate saved-page
+HTML export was supplied. Individual native-control checks were not explicitly
+reported; existing native markup and CSS were not changed by this work.
+
+The current automated suite additionally guards the archived V02.2 hash and its
+exact equality to the originating build. See the
+[V02.3 art-placement specification](amita-v02.3-art-placement.md) for preparation
+only; artwork integration will use a new working version.

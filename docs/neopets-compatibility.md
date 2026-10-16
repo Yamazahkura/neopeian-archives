@@ -74,11 +74,22 @@ problem line was `<div tabindex="0">`. Record **confirmed rejected** for the
 container was `<div class="ab" tabindex="0">`; its `tabindex="0"` attribute has
 now been removed. No other HTML or CSS was changed by this targeted fix.
 
-The resulting compact build awaits another live test. `overflow:auto`,
-`overflow-y:auto`, and the new height remain unverified on Neopets; rejection
-of an attribute does not establish acceptance of the rest of the lookup.
+Tori subsequently confirmed that the exact corrected 3,667-character V02.2
+build (commit `b5588c3`, without `tabindex`) was accepted without errors.
+Tori visually verified a stationary AMITA header during dossier scrolling,
+a working 320px reading area and visible scrollbar, and the intended parchment,
+typography, and overall styling. This is **user-confirmed whole-file evidence**
+for this pet lookup, including its `overflow:auto` behavior. It is not a general
+allowlist for overflow declarations: `overflow-y:auto` was not live tested.
+
+The exact build is archived byte-for-byte at
+`lookups/confirmed/amita/v02.2/v02.2.compact.html`; adjacent metadata records
+SHA-256, originating commit, approval, and confirmation scope. The exact live
+test time, browser, viewport, editor URL, and post-save HTML were not supplied.
+Individual native-control checks were not explicitly reported. `tabindex`
+remains confirmed rejected in the earlier submission context.
 
 Local Chromium checks are browser evidence only. See
 [the exact changes and artwork measurements](amita-v02.2-scrolling-dossier.md)
 for source/build paths, counts, local evidence, and proposed live checks.
-V02.1 remains the latest user-confirmed version.
+V02.2 is now the latest user-confirmed working version; V02.1 stays unchanged.
