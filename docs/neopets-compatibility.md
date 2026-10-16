@@ -2,16 +2,17 @@
 
 ## Confirmed restrictions
 
-These results were supplied by Tori during workspace setup on 2026-10-13.
-They describe Neopets accepting lookup code inside style blocks, not general
-browser support. Exact test dates, snippets, and rejection messages were not
-provided; do not invent them.
+The first three results were supplied by Tori during workspace setup on
+2026-10-13 without exact test dates, snippets, or rejection messages. The
+`box-sizing` result comes from the V02.2 screenshot described below. These are
+Neopets style-block filter observations, not general browser support.
 
 | Property | Recorded result | Project rule |
 | --- | --- | --- |
 | `box-shadow` | Rejected inside style blocks | Do not use |
 | `mix-blend-mode` | Rejected inside style blocks | Do not use |
 | `border-radius` | Rejected inside style blocks | Do not use |
+| `box-sizing` | V02.2 style-block rejection screenshot supplied 2026-10-16 | Do not use |
 
 Other CSS properties, values, selectors, and at-rules remain **unverified in
 isolation** until tested in the relevant Neopets editor and rendered page.
@@ -58,13 +59,19 @@ Neopets. See [the baseline report](amita-v02.1-baseline.md).
 
 ## Amita V02.2 scrolling prototype — 2026-10-16
 
-V02.2 uses `height:320px;box-sizing:border-box;overflow:auto` on the existing
-custom parchment reading panel and adds `tabindex="0"`. These additions are
-**unverified on Neopets**. A local Chromium check scrolled the existing content
-with both `overflow:auto` and a temporary `overflow-y:auto` override; this does
-not establish filter acceptance for either property/value. The header remained
-outside the scrolling region. No live submission was performed.
+Tori supplied a live Neopets error screenshot for the initial V02.2 draft. It
+reads: "Invalid words or disallowed property names found in your style tags."
+and explicitly lists `box-sizing`. Record **confirmed rejected** for this
+property in this style-block submission context. The exact editor URL and live
+test time were not supplied; do not infer acceptance of any other declaration.
 
-See [the exact changes and artwork measurements](amita-v02.2-scrolling-dossier.md)
-for the source/build paths, counts, local evidence, and proposed live checks.
+The revised V02.2 removes `box-sizing` and uses `height:278px;overflow:auto`
+with the existing 20px padding and 1px border, targeting the same 320px outer
+height through the default content-box model. This revised compact build has
+**not been tested on Neopets**. `overflow:auto`, `overflow-y:auto`, the new height,
+and `tabindex="0"` remain unverified there.
+
+Local Chromium checks are browser evidence only. See
+[the exact changes and artwork measurements](amita-v02.2-scrolling-dossier.md)
+for source/build paths, counts, local evidence, and proposed live checks.
 V02.1 remains the latest user-confirmed version.

@@ -23,12 +23,17 @@ The existing `.sd .ab` parchment panel becomes the reading area:
 
 | Selector | Added declaration | Purpose |
 | --- | --- | --- |
-| `.sd .ab` | `box-sizing:border-box` | Include padding and border within the 320px height |
-| `.sd .ab` | `height:320px` | Fixed reading-area outer height |
+| `.sd .ab` | `height:278px` | Content height; with 40px padding and 2px border, outer height is 320px |
 | `.sd .ab` | `overflow:auto` | Allow scrolling when content exceeds the panel |
 | `.sd .sn` (new rule) | `font-size:11px` | Small scroll note |
 | `.sd .sn` (new rule) | `text-align:right` | Align the note with the panel's right edge |
 | `.sd .sn` (new rule) | `margin:6px 0 0` | Gap above the note |
+
+The initial draft used `height:320px;box-sizing:border-box`. Tori supplied a
+live Neopets rejection screenshot naming `box-sizing` on 2026-10-16. The revised
+draft removes that declaration and uses the default content-box calculation:
+`278 + 20 + 20 + 1 + 1 = 320px`. It requires another live test; the screenshot
+does not establish acceptance of `overflow:auto` or any other addition.
 
 The existing `border:1px solid #9a9b7b` supplies the subtle reading boundary.
 Existing parchment/green colors, 20px panel padding, and 12px header-to-panel gap
@@ -101,11 +106,14 @@ npm test
 git diff --check
 ```
 
-The full generated ASCII submission is **3,702/4,000** code points, UTF-16 units,
-and UTF-8 bytes: **298 characters remain**. The existing builder is unchanged.
+The full generated ASCII submission is **3,680/4,000** code points, UTF-16 units,
+and UTF-8 bytes: **320 characters remain**. The existing builder is unchanged.
 All 12 automated tests pass, including baseline integrity, build freshness,
 and exact comparisons of every V02.1 CSS rule and resident element after removing
 only the documented additions.
+
+The browser measurements and scrolling assertions were rerun successfully after
+removing `box-sizing`; the panel and dossier geometry stayed identical.
 
 A separate local Playwright-driven Chromium check rendered the generated fragment
 with no native Neopets fixture. Current content scrolled 190px, with no horizontal
@@ -121,7 +129,7 @@ installed in a temporary directory only; no repository dependency or build chang
 was required. The committed test suite does not require a browser.
 
 Tori should test the exact compact file in the live editor, recording acceptance,
-rejection, or rewriting of `overflow:auto`, `height`, `box-sizing`, and `tabindex`;
+rejection, or rewriting of `overflow:auto`, `height`, and `tabindex`;
 then check wheel/trackpad and focused keyboard scrolling, advisory reachability,
 header stability, portrait/Petpet, all native stats/navigation/trophies, and
 functional controls. If the filter rejects the prototype, record its exact message
