@@ -19,7 +19,7 @@ test('Amita V02.3 changes only the documented background placement, footer fill 
   assert.equal(rules.get('.sd .aft a'), 'color:#e6ddc8');
   rules.delete('.sd .aft a');
   assert.deepEqual(rules, cssRules(baseline));
-  assert.equal(markup(next).replace('<br>Background: <a href="/~Zirc">Whitespace</a>', ''), markup(baseline));
+  assert.equal(markup(next).replace('<br>Background: <a href="/userlookup.phtml?user=mexxyyy">Whitespace</a>', ''), markup(baseline));
 });
 
 test('Universal V1.0 shares V02.3 structure and CSS while keeping character content editable', async () => {
@@ -40,6 +40,6 @@ test('both draft builds reproduce below 4000 UTF-16 units and exclude known reje
     const output = await read(`lookups/builds/${pet}/${version}.compact.html`);
     assert.doesNotMatch(output, /tabindex|box-sizing|box-shadow|mix-blend-mode|border-radius/);
     assert.match(output, /height:278px;overflow:auto/);
-    assert.match(output, /Background: <a href="\/~Zirc">Whitespace<\/a>/);
+    assert.ok(output.includes('Background: <a href="/userlookup.phtml?user=mexxyyy">Whitespace</a>'));
   }
 });

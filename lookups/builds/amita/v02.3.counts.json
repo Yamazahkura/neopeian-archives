@@ -2,9 +2,9 @@
   "sourceHtml": "lookups/src/amita/v02.3.html",
   "sourceCss": null,
   "submission": "lookups/builds/amita/v02.3.compact.html",
-  "codePoints": 3912,
-  "utf16Units": 3912,
-  "utf8Bytes": 3912,
+  "codePoints": 3936,
+  "utf16Units": 3936,
+  "utf8Bytes": 3936,
   "limit": 4000,
-  "remaining": 88
+  "remaining": 64
 }

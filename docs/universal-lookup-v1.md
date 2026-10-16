@@ -11,8 +11,8 @@ baseline; **neither new draft has been live-tested on Neopets**.
 
 | Draft | Edit this readable source | Generated complete submission | UTF-16 count | Remaining |
 | --- | --- | --- | ---: | ---: |
-| Amita V02.3 | `lookups/src/amita/v02.3.html` | `lookups/builds/amita/v02.3.compact.html` | 3,912 | 88 |
-| Universal V1.0 | `lookups/src/universal/v1.0.html` | `lookups/builds/universal/v1.0.compact.html` | 3,637 | 363 |
+| Amita V02.3 | `lookups/src/amita/v02.3.html` | `lookups/builds/amita/v02.3.compact.html` | 3,936 | 64 |
+| Universal V1.0 | `lookups/src/universal/v1.0.html` | `lookups/builds/universal/v1.0.compact.html` | 3,661 | 339 |
 
 Count reports are adjacent `*.counts.json` files. All current output is ASCII,
 so code points, UTF-16 units, and UTF-8 bytes match. Counts cover the full code,
@@ -46,7 +46,7 @@ is visible in the surrounding 18px padding/frame, rather than underneath all
 reading text. Existing dark fallback and light text remain unchanged.
 
 The only Amita HTML addition is a footer line linking the Whitespace credit to
-`/~Zirc`. A scoped `.sd .aft a { color:#e6ddc8 }` rule keeps the link readable
+`/userlookup.phtml?user=mexxyyy`. A scoped `.sd .aft a { color:#e6ddc8 }` rule keeps the link readable
 on the dark footer. All native CSS rules, resident text, markup order, stationary
 header, `height:278px;overflow:auto`, 20px reading padding, and 1px border remain
 exact. That reading panel's outer height stays **320px**.
@@ -66,14 +66,14 @@ and height. A browser with access can read `naturalWidth`/`naturalHeight` from t
 external URL without saving an image file; those values must be recorded only
 after successful loading, not from an error placeholder.
 
-Tori supplied the original [Whitespace resource page](https://www.neopets.com/~Zirc).
-The browsing tool returned **403 Forbidden**, so exact credit terms remain
-unverified. Both drafts include a visible **Background: Whitespace** credit
-linked to that petpage through the Neopets-relative URL `/~Zirc`. This is
-provisional attribution, not a claim that every creator requirement is satisfied.
-If the page requires a particular credit button or wording, add it and rebuild
-before live use. Preserve
-applicable attribution until replacing the placeholder with authorized artwork.
+Tori supplied the original [Whitespace resource page](https://www.neopets.com/~Zirc),
+which returned **403 Forbidden** through the browsing tool. Tori subsequently
+identified [mexxyyy's userlookup](https://www.neopets.com/userlookup.phtml?user=mexxyyy)
+as Whitespace's credit destination. Both drafts now link their visible
+**Background: Whitespace** credit there using the Neopets-relative URL
+`/userlookup.phtml?user=mexxyyy`. This destination is user-supplied; exact button
+or wording requirements have not been independently verified. Preserve applicable
+attribution until replacing the placeholder with authorized artwork.
 
 ## Reuse without a configuration system
 

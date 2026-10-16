@@ -2,9 +2,9 @@
   "sourceHtml": "lookups/src/universal/v1.0.html",
   "sourceCss": null,
   "submission": "lookups/builds/universal/v1.0.compact.html",
-  "codePoints": 3637,
-  "utf16Units": 3637,
-  "utf8Bytes": 3637,
+  "codePoints": 3661,
+  "utf16Units": 3661,
+  "utf8Bytes": 3661,
   "limit": 4000,
-  "remaining": 363
+  "remaining": 339
 }
