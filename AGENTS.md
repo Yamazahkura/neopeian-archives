@@ -15,9 +15,10 @@
 
 1. Confirmed working versions are immutable references. Never edit, rename,
    regenerate, or delete their files. Create a new working version instead.
-2. Amita V02.1 is the latest confirmed lookup, reported by Tori. Its source is
-   currently missing. Ask Tori for the confirmed file before importing it;
-   never reconstruct it from screenshots, assumptions, or fragments.
+2. Amita V02.1 is the latest confirmed lookup, reported by Tori. Its exact
+   compact reference and supplied readable source have been imported; see
+   `docs/amita-v02.1-baseline.md`. Never reconstruct missing designs from
+   screenshots, assumptions, or fragments.
 3. Keep readable HTML/CSS in `lookups/src/` and generated submissions in
    `lookups/builds/`. Do not hand-edit generated files.
 4. A pet lookup submission must fit within 4,000 characters, counting the entire

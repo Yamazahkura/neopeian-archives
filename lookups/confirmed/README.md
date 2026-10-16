@@ -1,10 +1,11 @@
 # Immutable confirmed references
 
-Awaiting Tori's confirmed **Amita V02.1** HTML file. No reference source or compact
-build has been reconstructed. Confirmation status comes from Tori; the exact
-code and its character count are unknown.
+Tori's confirmed **Amita V02.1** compact file is preserved byte-for-byte at
+`amita/v02.1/Amita_Lookup_Test_v02.1_vertical_compact.html` (3,468 characters).
+Its separate `metadata.json` records SHA-256, provenance, approval scope, and
+reported Neopets test context. See [the comparison report](../../docs/amita-v02.1-baseline.md).
 
-Once provided, preserve the exact original bytes under `amita/v02.1/`, with a
+For each future confirmed version, preserve the exact original bytes with a
 separate metadata document recording filename, SHA-256, provenance, confirmation
 date (if known), and Neopets test context. Do not normalize line endings, reformat,
 or minify the archived original. If an older submitted compact file exists,

@@ -1,0 +1,16 @@
+{
+  "filename": "Amita_Lookup_Test_v02.1_vertical_compact.html",
+  "version": "v02.1",
+  "pet": "amita",
+  "sha256": "aa55526f1b25cdcdf9a561911198c0acc842302c23e94f2bd2fbc7aa76cc7843",
+  "codePoints": 3468,
+  "utf16Units": 3468,
+  "utf8Bytes": 3468,
+  "importDate": "2026-10-16",
+  "confirmationDate": null,
+  "provenance": "Uploaded by Tori in the baseline import request; original filename retained, copied byte-for-byte.",
+  "approval": "Tori explicitly requested preservation as the immutable confirmed V02.1 reference. Merge and publication are not authorized.",
+  "neopetsTestContext": "Tori reports this compact HTML passed Neopets filters and rendered successfully. Exact test date, editor context, screenshots, and native-control checks were not supplied. No live test performed during import.",
+  "sourceStatus": "Readable V02.1 source subsequently supplied by Tori as Amita_Lookup_v02.1_vertical_readable.txt; imported byte-for-byte as lookups/src/amita/v02.1-import.html. Its leading V02.0 comment is stale; no annotations were altered.",
+  "sourceUploadSha256": "447871dff1b1b12f9461478b2bbd363718877a1800da7b8273ab9f3e90482638"
+}

@@ -13,9 +13,9 @@ provided; do not invent them.
 | `mix-blend-mode` | Rejected inside style blocks | Do not use |
 | `border-radius` | Rejected inside style blocks | Do not use |
 
-All other CSS properties, values, selectors, and at-rules are **unverified** until
-tested in the relevant Neopets editor and rendered page. No supported-property
-list is being inferred from Amita V02.1 because its code is not yet available.
+Other CSS properties, values, selectors, and at-rules remain **unverified in
+isolation** until tested in the relevant Neopets editor and rendered page.
+The whole-file V02.1 evidence below does not establish a general support list.
 Do not assume that a style-block restriction implies inline styles are supported.
 
 ## Submission limit
@@ -42,3 +42,16 @@ With Tori's approval for live testing, isolate one change at a time. Record:
 
 A passing build proves local generation and size checks only. It does not test
 the Neopets filter, layout, accessibility, native controls, or live asset URLs.
+
+## Amita V02.1 import evidence — 2026-10-16
+
+Tori supplied `Amita_Lookup_Test_v02.1_vertical_compact.html` and reported that
+this exact compact file passed Neopets filters and rendered successfully. It is
+archived unchanged under `lookups/confirmed/amita/v02.1/` with SHA-256 and
+provenance in `metadata.json`. The exact live test date and editor context,
+screenshots, and explicit native-control checks were not supplied.
+
+This is user-reported whole-file evidence. No live submission or rendering test
+was performed during import. The 3,664-character generated development build
+contains an additional CSS comment and four newlines; it has not been tested on
+Neopets. See [the baseline report](amita-v02.1-baseline.md).
