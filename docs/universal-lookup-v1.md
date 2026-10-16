@@ -13,7 +13,7 @@ another live test. Template V1.0 has not been live-tested.**
 | Draft | Edit this readable source | Generated complete submission | UTF-16 count | Remaining |
 | --- | --- | --- | ---: | ---: |
 | Amita V02.3 | `lookups/src/amita/v02.3.html` | `lookups/builds/amita/v02.3.compact.html` | 3,914 | 86 |
-| Universal V1.0 | `lookups/src/universal/v1.0.html` | `lookups/builds/universal/v1.0.compact.html` | 3,661 | 339 |
+| Universal V1.0 | `lookups/src/universal/v1.0.html` | `lookups/builds/universal/v1.0.compact.html` | 3,639 | 361 |
 
 Count reports are adjacent `*.counts.json` files. All current output is ASCII,
 so code points, UTF-16 units, and UTF-8 bytes match. Counts cover the full code,
@@ -38,8 +38,8 @@ image at its natural dimensions without stretching. `center top` anchors the
 top and centers any horizontal clipping. No fit-to-container scaling is requested.
 The image may not cover the container; the existing solid fallback fills any gap.
 Image, position, and repeat declarations remain unverified until the next live test.
-Template V1.0 is intentionally unchanged and retains the rejected `cover` declaration;
-its current build is not a corrected live-test candidate. The default background positioning area is the
+Universal V1.0 now also removes only that sizing declaration, restoring identical
+shared CSS between the two corrected drafts. Both await live Neopets testing. The default background positioning area is the
 padding box. This is a placement test, not a promise of exact artwork alignment.
 The background stays on the non-scrolling parent as lore scrolls inside `.ab`.
 
@@ -126,7 +126,7 @@ git diff --check
 
 All **16 automated tests pass**, including immutable baseline checks and three
 new checks covering the exact allowed V02.2-to-V02.3 changes, shared
-CSS/element structure in the template except its explicitly retained sizing declaration, build freshness/count limits, visible
+CSS/element structure in the template, build freshness/count limits, visible
 credit, and absence of known rejected features.
 
 Before this targeted compatibility fix, local Playwright/Chromium checks used

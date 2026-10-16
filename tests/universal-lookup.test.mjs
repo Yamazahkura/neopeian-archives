@@ -25,9 +25,7 @@ test('Amita V02.3 changes only the documented background placement, footer fill 
 test('Universal V1.0 shares V02.3 structure and CSS while keeping character content editable', async () => {
   const draft = await read('lookups/src/amita/v02.3.html');
   const template = await read('lookups/src/universal/v1.0.html');
-  // Template changes are outside this targeted Amita fix; record its one known divergence.
-  assert.ok(template.includes('background-size:cover'));
-  assert.deepEqual(cssRules(template.replace('  background-size:cover;\n', '')), cssRules(draft));
+  assert.deepEqual(cssRules(template), cssRules(draft));
   const shape = html => markup(html).replace(/>[^<]*</g, '><');
   assert.equal(shape(template), shape(draft));
   assert.ok(template.includes('PET NAME'));
@@ -35,13 +33,13 @@ test('Universal V1.0 shares V02.3 structure and CSS while keeping character cont
   assert.doesNotMatch(template, /AMITA|Swamp Witch|Mutant Cybunny|Self-appointed Witch/);
 });
 
-test('draft builds reproduce within the limit; corrected Amita excludes background-size', async () => {
+test('draft builds reproduce within the limit; both corrected drafts exclude background-size', async () => {
   for (const [pet, version] of [['amita', 'v02.3'], ['universal', 'v1.0']]) {
     const counts = await buildLookup(pet, version, { check: true });
     assert.ok(counts.remaining > 0);
     const output = await read(`lookups/builds/${pet}/${version}.compact.html`);
     assert.doesNotMatch(output, /tabindex|box-sizing|box-shadow|mix-blend-mode|border-radius/);
-    if (pet === 'amita') assert.doesNotMatch(output, /background-size/);
+    assert.doesNotMatch(output, /background-size/);
     assert.match(output, /height:278px;overflow:auto/);
     assert.ok(output.includes('Background: <a href="/userlookup.phtml?user=mexxyyy">Whitespace</a>'));
   }

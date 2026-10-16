@@ -108,9 +108,9 @@ The targeted Amita fix removes only `background-size:cover`. It retains
 `background-image`, `background-position:center top`, and `background-repeat:no-repeat`
 as **unverified** for another live test. Without sizing CSS the image uses its
 natural dimensions, with possible clipping; image dimensions remain unverified.
-No other Amita HTML or CSS changes are included. Template V1.0 is intentionally
-unchanged by this targeted fix and still contains the rejected property; its
-existing build is not a corrected candidate for live testing.
+No other Amita HTML or CSS changes are included. At Tori's follow-up request,
+Universal V1.0 also removes only `background-size:cover` and is rebuilt. Both
+corrected drafts retain the same placement CSS and await live Neopets testing.
 The existing `overflow:auto` reading window is retained; its prior confirmation
 applies to V02.2, not automatic whole-file compatibility of the new drafts.
 
