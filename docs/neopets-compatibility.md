@@ -67,9 +67,16 @@ test time were not supplied; do not infer acceptance of any other declaration.
 
 The revised V02.2 removes `box-sizing` and uses `height:278px;overflow:auto`
 with the existing 20px padding and 1px border, targeting the same 320px outer
-height through the default content-box model. This revised compact build has
-**not been tested on Neopets**. `overflow:auto`, `overflow-y:auto`, the new height,
-and `tabindex="0"` remain unverified there.
+height through the default content-box model. Tori subsequently reported another
+TNT rejection: "Invalid/disallowed HTML attribute `tabindex`." The reported
+problem line was `<div tabindex="0">`. Record **confirmed rejected** for the
+`tabindex` attribute in this Neopets pet lookup submission context. The source
+container was `<div class="ab" tabindex="0">`; its `tabindex="0"` attribute has
+now been removed. No other HTML or CSS was changed by this targeted fix.
+
+The resulting compact build awaits another live test. `overflow:auto`,
+`overflow-y:auto`, and the new height remain unverified on Neopets; rejection
+of an attribute does not establish acceptance of the rest of the lookup.
 
 Local Chromium checks are browser evidence only. See
 [the exact changes and artwork measurements](amita-v02.2-scrolling-dossier.md)

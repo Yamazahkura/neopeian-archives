@@ -25,9 +25,8 @@ test('V02.2 preserves every baseline rule and resident element except the docume
   assert.equal(nextRules.get('.sd .sn'), 'font-size:11px;text-align:right;margin:6px00');
   nextRules.delete('.sd .sn');
   assert.deepEqual(nextRules, rules(old));
-  assert.equal(markup(next).replace(' tabindex="0"', '')
-    .replace('<div class="sn">Scroll to read more</div>', ''), markup(old));
-  assert.doesNotMatch(next, /box-sizing|box-shadow|mix-blend-mode|border-radius|overflow-y|background-image/);
+  assert.equal(markup(next).replace('<div class="sn">Scroll to read more</div>', ''), markup(old));
+  assert.doesNotMatch(next, /tabindex|box-sizing|box-shadow|mix-blend-mode|border-radius|overflow-y|background-image/);
 });
 
 test('V02.2 committed compact build and count report reproduce within the lookup limit', async () => {

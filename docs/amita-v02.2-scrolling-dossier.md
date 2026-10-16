@@ -49,12 +49,16 @@ The builder retains CSS comments, so these annotation changes affect build size.
 
 ## Exact HTML changes
 
-1. Add `tabindex="0"` to the existing `<div class="ab">`, allowing keyboard focus
-   for browser scrolling. Neopets acceptance/preservation of this attribute is
-   unverified.
-2. Insert `<div class="sn">Scroll to read more</div>` immediately after `.ab` and
+The initial draft added `tabindex="0"` to `.ab`. Tori reported that TNT rejected
+this HTML attribute in the pet lookup context. The targeted follow-up removes
+only that attribute from the lookup; `.ab` is again `<div class="ab">`.
+All other HTML and CSS remain unchanged from the preceding draft.
+
+The remaining HTML differences from V02.1 are:
+
+1. Insert `<div class="sn">Scroll to read more</div>` immediately after `.ab` and
    before the existing `.aft` footer, outside the scrolling content.
-3. Split the formerly single-line markup across lines for readable source.
+2. Split the formerly single-line markup across lines for readable source.
    Existing element order, attributes, and resident text are otherwise exact.
 
 Resident Overview, Resident Classification, and Visitor Advisory all remain in
@@ -106,8 +110,8 @@ npm test
 git diff --check
 ```
 
-The full generated ASCII submission is **3,680/4,000** code points, UTF-16 units,
-and UTF-8 bytes: **320 characters remain**. The existing builder is unchanged.
+The full generated ASCII submission is **3,667/4,000** code points, UTF-16 units,
+and UTF-8 bytes: **333 characters remain**. The existing builder is unchanged.
 All 12 automated tests pass, including baseline integrity, build freshness,
 and exact comparisons of every V02.1 CSS rule and resident element after removing
 only the documented additions.
@@ -129,8 +133,8 @@ installed in a temporary directory only; no repository dependency or build chang
 was required. The committed test suite does not require a browser.
 
 Tori should test the exact compact file in the live editor, recording acceptance,
-rejection, or rewriting of `overflow:auto`, `height`, and `tabindex`;
-then check wheel/trackpad and focused keyboard scrolling, advisory reachability,
+rejection, or rewriting of `overflow:auto` and `height`;
+then check wheel/trackpad scrolling, advisory reachability,
 header stability, portrait/Petpet, all native stats/navigation/trophies, and
 functional controls. If the filter rejects the prototype, record its exact message
 before trying the alternative overflow declaration in a separate working version.
