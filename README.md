@@ -5,8 +5,11 @@ artwork hosted through GitHub Pages. The Haunted Swamp Tour Office is our fictio
 setting, with Ikharuss maintaining dossiers on unusual swamp residents.
 Our first resident is **Amita**, a Mutant Cybunny with a gothic swamp archive lookup.
 
-**Amita V02.1 is the latest confirmed working lookup, but its source is missing.**
-Tori must provide the confirmed file before import. Nothing here reconstructs it.
+**Amita V02.1 is the latest confirmed working lookup.** Its exact compact HTML
+is archived under `lookups/confirmed/amita/v02.1/`. The supplied readable source
+is imported unchanged as `lookups/src/amita/v02.1-import.html`. See the
+[baseline comparison](docs/amita-v02.1-baseline.md) for counts, provenance,
+non-identical build output, and proposed follow-up corrections.
 
 ## Repository layout
 
@@ -44,8 +47,12 @@ npm run build:lookup -- amita v03
 npm run build:lookup -- amita v03 --check
 ```
 
-These commands require real source files; the example version does not exist yet.
-No source files means no lookup build or character count is available.
+The example `v03` does not exist yet. Reproduce the imported baseline with:
+
+```sh
+npm run build:lookup -- amita v02.1-import
+npm run build:lookup -- amita v02.1-import --check
+```
 
 The build removes HTML comments and compacts CSS without selector/value
 optimization, import inlining, or URL rebasing. CSS comments are retained. It
