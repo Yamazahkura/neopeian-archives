@@ -55,3 +55,16 @@ This is user-reported whole-file evidence. No live submission or rendering test
 was performed during import. The 3,664-character generated development build
 contains an additional CSS comment and four newlines; it has not been tested on
 Neopets. See [the baseline report](amita-v02.1-baseline.md).
+
+## Amita V02.2 scrolling prototype — 2026-10-16
+
+V02.2 uses `height:320px;box-sizing:border-box;overflow:auto` on the existing
+custom parchment reading panel and adds `tabindex="0"`. These additions are
+**unverified on Neopets**. A local Chromium check scrolled the existing content
+with both `overflow:auto` and a temporary `overflow-y:auto` override; this does
+not establish filter acceptance for either property/value. The header remained
+outside the scrolling region. No live submission was performed.
+
+See [the exact changes and artwork measurements](amita-v02.2-scrolling-dossier.md)
+for the source/build paths, counts, local evidence, and proposed live checks.
+V02.1 remains the latest user-confirmed version.
